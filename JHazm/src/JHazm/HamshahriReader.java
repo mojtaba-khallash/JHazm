@@ -100,6 +100,10 @@ public class HamshahriReader {
             if (!isOpen) {
                 do {
                     index++;
+                    if (index >= allFiles.size()) {
+                        yieldBreak();
+                        return;
+                    }
                     file = new File(allFiles.get(index));
                 } while (getInvalidFiles().contains(file.getName()));
             }
