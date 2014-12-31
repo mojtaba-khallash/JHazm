@@ -73,7 +73,7 @@
 	
 	<target name="-post-jar">    
 	   <copy todir="${dist.jar.dir}/data">
-		   <fileset dir="data" includes="**"/>
+           <fileset dir="main/resources/data" includes="**"/>
 	   </copy>
 	   <copy todir="${dist.jar.dir}/resources">
 		   <fileset dir="resources" includes="**"/>
