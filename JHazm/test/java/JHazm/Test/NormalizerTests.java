@@ -1,8 +1,9 @@
-package JHazm.Test;
+package java.JHazm.Test;
 
 import JHazm.Normalizer;
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  *

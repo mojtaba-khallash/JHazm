@@ -1,13 +1,15 @@
-package JHazm.Test;
+package java.JHazm.Test;
 
 import JHazm.BijankhanReader;
 import edu.stanford.nlp.ling.TaggedWord;
+import org.junit.Test;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import static org.junit.Assert.assertEquals;
-import org.junit.Test;
 
 /**
  *

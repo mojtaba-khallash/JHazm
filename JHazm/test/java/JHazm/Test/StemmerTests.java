@@ -1,7 +1,8 @@
-package JHazm.Test;
+package java.JHazm.Test;
 
 import JHazm.Stemmer;
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 /**

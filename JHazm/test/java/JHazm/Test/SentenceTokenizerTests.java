@@ -1,8 +1,10 @@
-package JHazm.Test;
+package java.JHazm.Test;
 
 import JHazm.SentenceTokenizer;
-import java.util.List;
 import org.junit.Test;
+
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**

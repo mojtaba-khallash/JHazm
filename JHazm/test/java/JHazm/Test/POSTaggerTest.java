@@ -1,13 +1,15 @@
-package JHazm.Test;
+package java.JHazm.Test;
 
 import JHazm.POSTagger;
 import edu.stanford.nlp.ling.TaggedWord;
 import edu.stanford.nlp.util.StringUtils;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import static org.junit.Assert.assertEquals;
-import org.junit.Test;
 
 /**
  *

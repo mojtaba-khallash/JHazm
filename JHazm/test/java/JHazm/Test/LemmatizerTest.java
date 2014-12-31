@@ -1,10 +1,12 @@
-package JHazm.Test;
+package java.JHazm.Test;
 
 import JHazm.Lemmatizer;
+import org.junit.Test;
+
 import java.io.IOException;
 import java.util.List;
+
 import static org.junit.Assert.assertEquals;
-import org.junit.Test;
 
 /**
  *

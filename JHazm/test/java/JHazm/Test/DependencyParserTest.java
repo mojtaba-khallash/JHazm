@@ -1,16 +1,18 @@
-package JHazm.Test;
+package java.JHazm.Test;
 
 import JHazm.DependencyParser;
 import JHazm.Lemmatizer;
 import JHazm.Normalizer;
+import org.junit.Test;
+import org.maltparser.concurrent.graph.ConcurrentDependencyGraph;
+import org.maltparser.core.exception.MaltChainedException;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.Iterator;
+
 import static org.junit.Assert.assertEquals;
-import org.junit.Test;
-import org.maltparser.concurrent.graph.ConcurrentDependencyGraph;
-import org.maltparser.core.exception.MaltChainedException;
 
 /**
  *
