@@ -1,8 +1,8 @@
-package java.JHazm.Test;
+package iust.ac.ir.nlp.jhazm.Test;
 
-import JHazm.DependencyParser;
-import JHazm.Lemmatizer;
-import JHazm.Normalizer;
+import iust.ac.ir.nlp.jhazm.DependencyParser;
+import iust.ac.ir.nlp.jhazm.Lemmatizer;
+import iust.ac.ir.nlp.jhazm.Normalizer;
 import org.junit.Test;
 import org.maltparser.concurrent.graph.ConcurrentDependencyGraph;
 import org.maltparser.core.exception.MaltChainedException;

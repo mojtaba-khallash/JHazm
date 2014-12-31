@@ -1,7 +1,7 @@
-package java.JHazm.Test;
+package iust.ac.ir.nlp.jhazm.Test;
 
-import JHazm.BijankhanReader;
 import edu.stanford.nlp.ling.TaggedWord;
+import iust.ac.ir.nlp.jhazm.BijankhanReader;
 import org.junit.Test;
 
 import java.io.IOException;

@@ -1,8 +1,8 @@
-package java.JHazm.Test;
+package iust.ac.ir.nlp.jhazm.Test;
 
-import JHazm.POSTagger;
 import edu.stanford.nlp.ling.TaggedWord;
 import edu.stanford.nlp.util.StringUtils;
+import iust.ac.ir.nlp.jhazm.POSTagger;
 import org.junit.Test;
 
 import java.util.ArrayList;

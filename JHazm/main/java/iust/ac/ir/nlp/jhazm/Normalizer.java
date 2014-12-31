@@ -1,7 +1,8 @@
-package JHazm;
+package iust.ac.ir.nlp.jhazm;
 
-import JHazm.Utility.MakeTrans;
-import JHazm.Utility.RegexPattern;
+import iust.ac.ir.nlp.jhazm.utility.MakeTrans;
+import iust.ac.ir.nlp.jhazm.utility.RegexPattern;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,18 +11,14 @@ import java.util.List;
  * @author Mojtaba Khallash
  */
 public class Normalizer {
-    private boolean characterRefinement = true;
-    private List<RegexPattern> characterRefinementPatterns;
-
-    private boolean punctuationSpacing = true;
-    private List<RegexPattern> punctuationSpacingPatterns;
-
-    private boolean affixSpacing = true;
-    private List<RegexPattern> affixSpacingPatterns;
-
     private final String puncAfter = "!:\\.،؛؟»\\]\\)\\}";
     private final String puncBefore = "«\\[\\(\\{";
-
+    private boolean characterRefinement = true;
+    private List<RegexPattern> characterRefinementPatterns;
+    private boolean punctuationSpacing = true;
+    private List<RegexPattern> punctuationSpacingPatterns;
+    private boolean affixSpacing = true;
+    private List<RegexPattern> affixSpacingPatterns;
     private MakeTrans translations;
 
     public Normalizer() {

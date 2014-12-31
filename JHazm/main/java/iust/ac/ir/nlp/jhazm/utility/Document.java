@@ -1,4 +1,4 @@
-package JHazm.Utility;
+package iust.ac.ir.nlp.jhazm.utility;
 
 /**
  *
@@ -6,51 +6,52 @@ package JHazm.Utility;
  */
 public class Document {
     private String ID;
+    private String Number;
+    private String OriginalFile;
+    private String Issue;
+    private String WesternDate;
+    private String PersianDate;
+    private String EnglishCategory;
+    private String PersianCategory;
+    private String Title;
+    private String Body;
+
     public String getID() { return ID; }
+
     public void setID(String ID) { this.ID = ID; }
 
-    
-    private String Number;
     public String getNumber() { return Number; }
+
     public void setNumber(String Number) { this.Number = Number; }
 
-    
-    private String OriginalFile;
     public String getOriginalFile() { return OriginalFile; }
+
     public void setOriginalFile(String OriginalFile) { this.OriginalFile = OriginalFile; }
 
-    
-    private String Issue;
     public String getIssue() { return Issue; }
+
     public void setIssue(String Issue) { this.Issue = Issue; }
 
-    
-    private String WesternDate;
     public String getWesternDate() { return WesternDate; }
+
     public void setWesternDate(String WesternDate) { this.WesternDate = WesternDate; }
 
-    
-    private String PersianDate;
     public String getPersianDate() { return PersianDate; }
+
     public void setPersianDate(String PersianDate) { this.PersianDate = PersianDate; }
 
-    
-    private String EnglishCategory;
     public String getEnglishCategory() { return EnglishCategory; }
+
     public void setEnglishCategory(String EnglishCategory) { this.EnglishCategory = EnglishCategory; }
 
-    
-    private String PersianCategory;
     public String getPersianCategory() { return PersianCategory; }
+
     public void setPersianCategory(String PersianCategory) { this.PersianCategory = PersianCategory; }
 
-    
-    private String Title;
     public String getTitle() { return Title; }
+
     public void setTitle(String Title) { this.Title = Title; }
 
-    
-    private String Body;
     public String getBody() { return Body; }
     public void setBody(String Body) { this.Body = Body; }
     

@@ -1,6 +1,7 @@
-package JHazm;
+package iust.ac.ir.nlp.jhazm;
 
-import JHazm.Utility.RegexPattern;
+import iust.ac.ir.nlp.jhazm.utility.RegexPattern;
+
 import java.util.Arrays;
 import java.util.List;
 

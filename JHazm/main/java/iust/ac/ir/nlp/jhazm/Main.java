@@ -1,4 +1,4 @@
-package JHazm;
+package iust.ac.ir.nlp.jhazm;
 
 /**
  * Created by majid on 12/31/14.

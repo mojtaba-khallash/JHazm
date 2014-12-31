@@ -1,6 +1,6 @@
-package java.JHazm.Test;
+package iust.ac.ir.nlp.jhazm.Test;
 
-import JHazm.Stemmer;
+import iust.ac.ir.nlp.jhazm.Stemmer;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

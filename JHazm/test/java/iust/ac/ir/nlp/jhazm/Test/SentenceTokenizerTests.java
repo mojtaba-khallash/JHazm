@@ -1,11 +1,11 @@
-package java.JHazm.Test;
+package iust.ac.ir.nlp.jhazm.Test;
 
-import JHazm.SentenceTokenizer;
+import iust.ac.ir.nlp.jhazm.SentenceTokenizer;
 import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  *

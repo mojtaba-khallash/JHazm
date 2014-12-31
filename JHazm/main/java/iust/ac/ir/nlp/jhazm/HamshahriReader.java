@@ -1,16 +1,17 @@
-package JHazm;
+package iust.ac.ir.nlp.jhazm;
 
-import JHazm.Utility.Document;
-import JHazm.Utility.RegexPattern;
 import com.infomancers.collections.yield.Yielder;
+import iust.ac.ir.nlp.jhazm.utility.Document;
+import iust.ac.ir.nlp.jhazm.utility.RegexPattern;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
 
 /**
  * interfaces Hamshahri Corpus (http://ece.ut.ac.ir/dbrg/hamshahri/files/HAM2/Corpus.zip) 
@@ -19,31 +20,19 @@ import org.w3c.dom.NodeList;
  * @author Mojtaba Khallash
  */
 public class HamshahriReader {
-    private RegexPattern paragraphPattern;
-    public RegexPattern getParagraphPattern() {
-        return paragraphPattern;
-    }
-    
-    private String rootFolder;
-    public String getRootFolder() {
-        return rootFolder;
-    }
-        
     private final String[] invalidFiles = new String[] {
-        "hamshahri.dtd", "HAM2-960622.xml", "HAM2-960630.xml", "HAM2-960701.xml", "HAM2-960709.xml", 
-        "HAM2-960710.xml", "HAM2-960711.xml", "HAM2-960817.xml", "HAM2-960818.xml", "HAM2-960819.xml", 
-        "HAM2-960820.xml", "HAM2-961019.xml", "HAM2-961112.xml", "HAM2-961113.xml", "HAM2-961114.xml", 
-        "HAM2-970414.xml", "HAM2-970415.xml", "HAM2-970612.xml", "HAM2-970614.xml", "HAM2-970710.xml", 
-        "HAM2-970712.xml", "HAM2-970713.xml", "HAM2-970717.xml", "HAM2-970719.xml", "HAM2-980317.xml", 
-        "HAM2-040820.xml", "HAM2-040824.xml", "HAM2-040825.xml", "HAM2-040901.xml", "HAM2-040917.xml", 
-        "HAM2-040918.xml", "HAM2-040920.xml", "HAM2-041025.xml", "HAM2-041026.xml", "HAM2-041027.xml", 
-        "HAM2-041230.xml", "HAM2-041231.xml", "HAM2-050101.xml", "HAM2-050102.xml", "HAM2-050223.xml", 
+            "hamshahri.dtd", "HAM2-960622.xml", "HAM2-960630.xml", "HAM2-960701.xml", "HAM2-960709.xml",
+            "HAM2-960710.xml", "HAM2-960711.xml", "HAM2-960817.xml", "HAM2-960818.xml", "HAM2-960819.xml",
+            "HAM2-960820.xml", "HAM2-961019.xml", "HAM2-961112.xml", "HAM2-961113.xml", "HAM2-961114.xml",
+            "HAM2-970414.xml", "HAM2-970415.xml", "HAM2-970612.xml", "HAM2-970614.xml", "HAM2-970710.xml",
+            "HAM2-970712.xml", "HAM2-970713.xml", "HAM2-970717.xml", "HAM2-970719.xml", "HAM2-980317.xml",
+            "HAM2-040820.xml", "HAM2-040824.xml", "HAM2-040825.xml", "HAM2-040901.xml", "HAM2-040917.xml",
+            "HAM2-040918.xml", "HAM2-040920.xml", "HAM2-041025.xml", "HAM2-041026.xml", "HAM2-041027.xml",
+            "HAM2-041230.xml", "HAM2-041231.xml", "HAM2-050101.xml", "HAM2-050102.xml", "HAM2-050223.xml",
         "HAM2-050224.xml", "HAM2-050406.xml", "HAM2-050407.xml", "HAM2-050416.xml"
     };
-    public List<String> getInvalidFiles() {
-        return Arrays.asList(invalidFiles);
-    }
-
+    private RegexPattern paragraphPattern;
+    private String rootFolder;
     public HamshahriReader() {
         this("resources/hamshahri");
     }
@@ -51,6 +40,18 @@ public class HamshahriReader {
     public HamshahriReader(String root) {
         this.rootFolder = root;
         this.paragraphPattern = new RegexPattern("(\n.{0,50})(?=\n)", "$1\n");
+    }
+
+    public RegexPattern getParagraphPattern() {
+        return paragraphPattern;
+    }
+
+    public String getRootFolder() {
+        return rootFolder;
+    }
+
+    public List<String> getInvalidFiles() {
+        return Arrays.asList(invalidFiles);
     }
 
     public Iterable<Document> GetDocuments() {

@@ -1,4 +1,4 @@
-package JHazm.Utility;
+package iust.ac.ir.nlp.jhazm.utility;
 
 import java.util.HashMap;
 import java.util.Map;

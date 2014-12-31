@@ -1,6 +1,6 @@
-package java.JHazm.Test;
+package iust.ac.ir.nlp.jhazm.Test;
 
-import JHazm.WordTokenizer;
+import iust.ac.ir.nlp.jhazm.WordTokenizer;
 import org.junit.Test;
 
 import java.io.IOException;

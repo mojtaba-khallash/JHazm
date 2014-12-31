@@ -1,6 +1,6 @@
-package java.JHazm.Test;
+package iust.ac.ir.nlp.jhazm.Test;
 
-import JHazm.Normalizer;
+import iust.ac.ir.nlp.jhazm.Normalizer;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

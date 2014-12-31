@@ -1,37 +1,23 @@
-package JHazm;
+package iust.ac.ir.nlp.jhazm;
 
-import JHazm.Utility.RegexPattern;
+import iust.ac.ir.nlp.jhazm.utility.RegexPattern;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 /**
  *
  * @author Mojtaba Khallash
  */
 public class WordTokenizer {
+    List<String> verbs;
     private boolean joinVerbParts = true;
     private HashSet<String> beforeVerbs;
-    public HashSet<String> getBeforeVerbs() {
-        return beforeVerbs;
-    }
     private HashSet<String> afterVerbs;
-    public HashSet<String> getAfterVerbs() {
-        return afterVerbs;
-    }
-
     private RegexPattern pattern;
-
-    List<String> verbs;
-    public List<String> getVerbs() {
-        return verbs;
-    }
 
     public WordTokenizer() throws IOException {
         this(true);
@@ -40,7 +26,6 @@ public class WordTokenizer {
     public WordTokenizer(boolean joinVerbParts) throws IOException {
         this("data/verbs.dat", joinVerbParts);
     }
-
     public WordTokenizer(String verbsFile) throws IOException {
         this(verbsFile, true);
     }
@@ -54,22 +39,22 @@ public class WordTokenizer {
             String[] tokens;
 
             tokens = new String[] {
-                "ام", "ای", "است", "ایم", "اید", "اند", 
-                "بودم", "بودی", "بود", "بودیم", "بودید", "بودند", 
+                    "ام", "ای", "است", "ایم", "اید", "اند",
+                    "بودم", "بودی", "بود", "بودیم", "بودید", "بودند",
                 "باشم", "باشی", "باشد", "باشیم", "باشید", "باشند",
-                "شده ام", "شده ای", "شده است", "شده ایم", "شده اید", "شده اند", 
-                "شده بودم", "شده بودی", "شده بود", "شده بودیم", "شده بودید", "شده بودند", 
+                    "شده ام", "شده ای", "شده است", "شده ایم", "شده اید", "شده اند",
+                    "شده بودم", "شده بودی", "شده بود", "شده بودیم", "شده بودید", "شده بودند",
                 "شده باشم", "شده باشی", "شده باشد", "شده باشیم", "شده باشید", "شده باشند",
-                "نشده ام", "نشده ای", "نشده است", "نشده ایم", "نشده اید", "نشده اند", 
-                "نشده بودم", "نشده بودی", "نشده بود", "نشده بودیم", "نشده بودید", "نشده بودند", 
+                    "نشده ام", "نشده ای", "نشده است", "نشده ایم", "نشده اید", "نشده اند",
+                    "نشده بودم", "نشده بودی", "نشده بود", "نشده بودیم", "نشده بودید", "نشده بودند",
                 "نشده باشم", "نشده باشی", "نشده باشد", "نشده باشیم", "نشده باشید", "نشده باشند",
-                "شوم", "شوی", "شود", "شویم", "شوید", "شوند", 
+                    "شوم", "شوی", "شود", "شویم", "شوید", "شوند",
                 "شدم", "شدی", "شد", "شدیم", "شدید", "شدند",
-                "نشوم", "نشوی", "نشود", "نشویم", "نشوید", "نشوند", 
+                    "نشوم", "نشوی", "نشود", "نشویم", "نشوید", "نشوند",
                 "نشدم", "نشدی", "نشد", "نشدیم", "نشدید", "نشدند",
-                "می‌شوم", "می‌شوی", "می‌شود", "می‌شویم", "می‌شوید", "می‌شوند", 
+                    "می‌شوم", "می‌شوی", "می‌شود", "می‌شویم", "می‌شوید", "می‌شوند",
                 "می‌شدم", "می‌شدی", "می‌شد", "می‌شدیم", "می‌شدید", "می‌شدند",
-                "نمی‌شوم", "نمی‌شوی", "نمی‌شود", "نمی‌شویم", "نمی‌شوید", "نمی‌شوند", 
+                    "نمی‌شوم", "نمی‌شوی", "نمی‌شود", "نمی‌شویم", "نمی‌شوید", "نمی‌شوند",
                 "نمی‌شدم", "نمی‌شدی", "نمی‌شد", "نمی‌شدیم", "نمی‌شدید", "نمی‌شدند",
                 "خواهم شد", "خواهی شد", "خواهد شد", "خواهیم شد", "خواهید شد", "خواهند شد",
                 "نخواهم شد", "نخواهی شد", "نخواهد شد", "نخواهیم شد", "نخواهید شد", "نخواهند شد"
@@ -92,6 +77,18 @@ public class WordTokenizer {
                 this.verbs.set(i, verb.trim().split("#")[0] + "ه");
             }
         }
+    }
+
+    public HashSet<String> getBeforeVerbs() {
+        return beforeVerbs;
+    }
+
+    public HashSet<String> getAfterVerbs() {
+        return afterVerbs;
+    }
+
+    public List<String> getVerbs() {
+        return verbs;
     }
 
     public List<String> Tokenize(String sentence) {

@@ -46,7 +46,7 @@
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
                             <mainClass>
-                                JHazm.Main
+                                iust.ac.ir.nlp.jhazm.Main
                             </mainClass>
                         </manifest>
                     </archive>
@@ -58,7 +58,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>JHazm.Main</mainClass>
+                            <mainClass>iust.ac.ir.nlp.jhazm.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -89,7 +89,7 @@
             <artifactId>yielder</artifactId>
             <version>0.3.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/yielder-0.3.0.jar</systemPath>
+            <systemPath>${project.basedir}/local-libs/yielder-0.3.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
