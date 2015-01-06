@@ -19,7 +19,7 @@ To make a single jar file run this codes:
 mvn clean compile assembly:single
 
 To run and see the help:
-```shell
+```bash
 java -jar jhazm-jar-with-dependencies.jar
 ```
 
