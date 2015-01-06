@@ -19,15 +19,22 @@ To make a single jar file run this codes:
 mvn clean compile assembly:single
 
 To run and see the help:
+```
 java -jar jhazm-jar-with-dependencies.jar
+```
 
 For example to do POS Tag on bundled sample file use:
+```
 java -jar jhazm-jar-with-dependencies.jar -a partOfSpeechTagging -o test.txt
+```
 
 Or to run on any other file:
+```
 java -jar jhazm-jar-with-dependencies.jar -a partOfSpeechTagging -o test.txt -i input.txt
+```
 
 Or on sample text:
+```
 java -jar jhazm-jar-with-dependencies.jar -a partOfSpeechTagging -o test.txt -t "سلام من خوب هستم!"
-
+```
 Good Luck!
