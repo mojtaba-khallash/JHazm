@@ -1,5 +1,6 @@
 package iust.ac.ir.nlp.jhazm;
 
+import iust.ac.ir.nlp.jhazm.io.FileHandler;
 import iust.ac.ir.nlp.jhazm.utility.RegexPattern;
 
 import java.io.IOException;
@@ -69,7 +70,7 @@ public class WordTokenizer {
 
             this.beforeVerbs = new HashSet<>(Arrays.asList(tokens));
 
-            this.verbs = new ArrayList<>(Files.readAllLines(Paths.get(verbsFile), Charset.forName("UTF8")));
+            this.verbs = new ArrayList<>(Files.readAllLines(FileHandler.getPath(verbsFile), Charset.forName("UTF8")));
             Collections.reverse(this.verbs);
             for (int i = 0; i < this.verbs.size(); i++)
             {

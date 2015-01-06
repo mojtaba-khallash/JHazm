@@ -1,4 +1,4 @@
-package JHazm;
+package iust.ac.ir.nlp.jhazm;
 
 import org.apache.commons.lang3.StringUtils;
 

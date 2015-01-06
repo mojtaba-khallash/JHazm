@@ -1,5 +1,7 @@
 package iust.ac.ir.nlp.jhazm;
 
+import iust.ac.ir.nlp.jhazm.io.FileHandler;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -26,9 +28,9 @@ public class Lemmatizer {
     public Lemmatizer(String wordsFile, String verbsFile, boolean joinedVerbParts)
             throws IOException {
         //Stemmer stemmer = new Stemmer();
-
+        System.out.println(System.getProperty("user.dir"));
         this.words = new HashSet<>();
-        for (String line : Files.readAllLines(Paths.get(wordsFile), Charset.forName("UTF8")))
+        for (String line : Files.readAllLines(FileHandler.getPath(wordsFile), Charset.forName("UTF8")))
             this.words.add(line.trim());
 
         WordTokenizer tokenizer = new WordTokenizer(verbsFile);
