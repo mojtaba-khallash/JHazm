@@ -33,7 +33,7 @@ Or to run on any other file:
 java -jar jhazm-jar-with-dependencies.jar -a partOfSpeechTagging -o test.txt -i input.txt
 ```
 
-Or on sample text:
+Or on some piece of text:
 ```bash
 java -jar jhazm-jar-with-dependencies.jar -a partOfSpeechTagging -o test.txt -t "سلام من خوب هستم!"
 ```
