@@ -22,22 +22,22 @@ public class LemmatizerTest {
 
         input = "کتاب‌ها";
         expected = "کتاب";
-        actual = lemmatizer.Lemmatize(input);
+        actual = lemmatizer.lemmatize(input);
         assertEquals("Failed to lematize of '" + input + "' word", expected, actual);
 
         input = "آتشفشان";
         expected = "آتشفشان";
-        actual = lemmatizer.Lemmatize(input);
+        actual = lemmatizer.lemmatize(input);
         assertEquals("Failed to lematize of '" + input + "' word", expected, actual);
 
         input = "می‌روم";
         expected = "رفت#رو";
-        actual = lemmatizer.Lemmatize(input);
+        actual = lemmatizer.lemmatize(input);
         assertEquals("Failed to lematize of '" + input + "' word", expected, actual);
 
         input = "گفته شده است";
         expected = "گفت#گو";
-        actual = lemmatizer.Lemmatize(input);
+        actual = lemmatizer.lemmatize(input);
         assertEquals("Failed to lematize of '" + input + "' word", expected, actual);
 
         input = "مردم";

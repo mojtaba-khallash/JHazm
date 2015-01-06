@@ -24,17 +24,17 @@ public class POSTagger {
         this.tagger = new MaxentTagger(pathToModel);
     }
 
-    public List<List<TaggedWord>> BatchTags(List<List<String>> sentences) {
+    public List<List<TaggedWord>> batchTags(List<List<String>> sentences) {
         List<List<TaggedWord>> result = new ArrayList<>();
 
         for (List<String> sentence : sentences) {
-            result.add(BatchTag(sentence));
+            result.add(batchTag(sentence));
         }
 
         return result;
     }
 
-    public List<TaggedWord> BatchTag(List<String> sentence) {
+    public List<TaggedWord> batchTag(List<String> sentence) {
         String[] sen = new String[sentence.size()];
         for (int i = 0; i < sentence.size(); i++)
            sen[i] = sentence.get(i).replace(" ", "_");

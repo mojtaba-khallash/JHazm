@@ -5,8 +5,8 @@
   ~ Created by maJid~ASGARI
   -->
 
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -20,6 +20,7 @@
         <junit.version>4.11</junit.version>
         <collections.version>4.0</collections.version>
         <io.version>2.4</io.version>
+        <cli.version>1.2</cli.version>
         <lang.version>3.3.2</lang.version>
         <hamcrest.version>1.3</hamcrest.version>
         <malt.version>1.8.1</malt.version>
@@ -55,7 +56,7 @@
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
                             <mainClass>
-                                iust.ac.ir.nlp.jhazm.Main
+                                iust.ac.ir.nlp.jhazm.Runner
                             </mainClass>
                         </manifest>
                     </archive>
@@ -65,9 +66,10 @@
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
+                    <finalName>jhazm</finalName>
                     <archive>
                         <manifest>
-                            <mainClass>iust.ac.ir.nlp.jhazm.Main</mainClass>
+                            <mainClass>iust.ac.ir.nlp.jhazm.Runner</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -81,6 +83,26 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                    <sourceIncludes>
+                        <sourceInclude>**/*.*</sourceInclude>
+                    </sourceIncludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.7.2</version>
+                <configuration>
+                    <workingDirectory>src/test/resources</workingDirectory>
                 </configuration>
             </plugin>
         </plugins>
@@ -108,6 +130,11 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>${cli.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

@@ -114,7 +114,7 @@ public class DependencyParser {
             String word = taggedWord.word();
             String Lemma = "_";
             if (this.lemmatizer != null)
-                Lemma = this.lemmatizer.Lemmatize(word);
+                Lemma = this.lemmatizer.lemmatize(word);
             String pos = taggedWord.tag();
 
             conll[i] = String.format("%s\t%s\t%s\t%s\t%s\t%s",
@@ -145,7 +145,7 @@ public class DependencyParser {
                 if (index < sentences.size()) {
                     String sentence = sentences.get(index);
                     List<String> words = getWordTokenizer().Tokenize(sentence);
-                    yieldReturn(RawParse(getTagger().BatchTag(words)));
+                    yieldReturn(RawParse(getTagger().batchTag(words)));
                 }
             }
             catch (Exception ex) {

@@ -33,7 +33,7 @@ public class FileHandler {
         if (libraryInputStream == null)
             libraryInputStream = FileHandler.class.getResourceAsStream("/" + name.substring(name.indexOf("/") + 1));
         try {
-            if (!Files.exists(file.getParent())) Files.createDirectories(file.getParent());
+            if (file.getParent() != null && !Files.exists(file.getParent())) Files.createDirectories(file.getParent());
             FileUtils.copyInputStreamToFile(libraryInputStream, file.toFile());
         } catch (IOException e) {
             Logger.getLogger(FileHandler.class).debug(e);

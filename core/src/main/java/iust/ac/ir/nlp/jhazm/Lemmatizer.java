@@ -26,8 +26,6 @@ public class Lemmatizer {
     }
     public Lemmatizer(String wordsFile, String verbsFile, boolean joinedVerbParts)
             throws IOException {
-        //Stemmer stemmer = new Stemmer();
-        System.out.println(System.getProperty("user.dir"));
         this.words = new HashSet<>();
         for (String line : Files.readAllLines(FileHandler.getPath(wordsFile), Charset.forName("UTF8")))
             this.words.add(line.trim());
@@ -58,7 +56,7 @@ public class Lemmatizer {
         }
     }
 
-    public String Lemmatize(String word) {
+    public String lemmatize(String word) {
         return Lemmatize(word, "");
     }
     

@@ -28,7 +28,7 @@ public class POSTaggerTest {
         expected.add(new TaggedWord("مدرسه","N"));
         expected.add(new TaggedWord("رفته بودم","V"));
         expected.add(new TaggedWord(".","PUNC"));
-        List<TaggedWord> actual = tagger.BatchTag(Arrays.asList(input));
+        List<TaggedWord> actual = tagger.batchTag(Arrays.asList(input));
 
         assertEquals("Failed to tagged words of '" + StringUtils.join(input, " ") + "' sentence", expected.size(), actual.size());
         for (int i = 0; i < expected.size(); i++) {
