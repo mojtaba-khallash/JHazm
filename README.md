@@ -10,4 +10,4 @@ A Java version of [Hazm](https://github.com/sobhe/hazm) (Python library for dige
 + Dependency parser
 + Corpus readers for [Hamshahri](http://ece.ut.ac.ir/dbrg/hamshahri/) and [Bijankhan](http://ece.ut.ac.ir/dbrg/bijankhan/)
 
-* You can download [pre-trained tagger and parser models](http://dl.dropboxusercontent.com/u/90405495/resources.zip) for persian and put these models in the `resources` folder of your project.
+* You can download [pre-trained tagger and parser models](http://dl.dropboxusercontent.com/u/90405495/resources.zip) for persian and put these models in the `core/src/main/resources` folder of your project.
