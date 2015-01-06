@@ -24,17 +24,17 @@ java -jar jhazm-jar-with-dependencies.jar
 ```
 
 For example to do POS Tag on bundled sample file use:
-```
+```bash
 java -jar jhazm-jar-with-dependencies.jar -a partOfSpeechTagging -o test.txt
 ```
 
 Or to run on any other file:
-```
+```bash
 java -jar jhazm-jar-with-dependencies.jar -a partOfSpeechTagging -o test.txt -i input.txt
 ```
 
 Or on sample text:
-```
+```bash
 java -jar jhazm-jar-with-dependencies.jar -a partOfSpeechTagging -o test.txt -t "سلام من خوب هستم!"
 ```
 Good Luck!
