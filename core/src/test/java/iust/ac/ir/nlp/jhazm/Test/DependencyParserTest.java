@@ -41,8 +41,8 @@ public class DependencyParserTest {
             "12	بگیرید	_	V	ACT	_",
             "13	.	_	PUNC	PUNC	_",
         };
-        String expected = 
-            "1	از	_	PREP	PREP	_	12	VPP	_	_\n" +
+        String expected =
+                "1	از	_	PREP	PREP	_	0	ROOT	_	_\n" +
             "2	نصایح	_	N	IANM	_	1	POSDEP	_	_\n" +
             "3	باارزش	_	ADJ	AJP	_	2	MOZ	_	_\n" +
             "4	مولای	_	N	ANM	_	3	MOZ	_	_\n" +
@@ -52,9 +52,9 @@ public class DependencyParserTest {
             "8	(	_	PUNC	PUNC	_	7	MOZ	_	_\n" +
             "9	علیه‌السلام	_	N	IANM	_	8	POSDEP	_	_\n" +
             "10	)	_	PUNC	PUNC	_	9	PUNC	_	_\n" +
-            "11	پند	_	N	IANM	_	7	APP	_	_\n" +
-            "12	بگیرید	_	V	ACT	_	11	ROOT	_	_\n" +
-            "13	.	_	PUNC	PUNC	_	12	PUNC	_	_\n" ;
+                        "11	پند	_	N	IANM	_	4	APP	_	_\n" +
+                        "12	بگیرید	_	V	ACT	_	11	POSDEP	_	_\n" +
+                        "13	.	_	PUNC	PUNC	_	0	ROOT	_	_\n";
         ConcurrentDependencyGraph graph = parser.Parse(input);
         String actual = graph.toString();
 
@@ -67,8 +67,8 @@ public class DependencyParserTest {
 
 
         String inputSentence = "من به مدرسه رفته بودم.";
-        expected = "1	من	من	PR	PR	_	4	SBJ	_	_\n" +
-                    "2	به	به	PREP	PREP	_	4	VPP	_	_\n" +
+        expected = "1	من	من	PRO	PRO	_	4	SBJ	_	_\n" +
+                "2	به	به	P	P	_	4	VPP	_	_\n" +
                     "3	مدرسه	مدرسه	N	N	_	2	POSDEP	_	_\n" +
                     "4	رفته بودم	رفت#رو	V	V	_	0	ROOT	_	_\n" +
                     "5	.	.	PUNC	PUNC	_	4	PUNC	_	_\n";

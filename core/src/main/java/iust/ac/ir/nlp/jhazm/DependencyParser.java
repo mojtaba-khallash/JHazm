@@ -2,14 +2,13 @@ package iust.ac.ir.nlp.jhazm;
 
 import com.infomancers.collections.yield.Yielder;
 import edu.stanford.nlp.ling.TaggedWord;
+import iust.ac.ir.nlp.jhazm.io.FileHandler;
 import org.maltparser.concurrent.ConcurrentMaltParserModel;
 import org.maltparser.concurrent.ConcurrentMaltParserService;
 import org.maltparser.concurrent.graph.ConcurrentDependencyGraph;
 import org.maltparser.core.exception.MaltChainedException;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
@@ -83,10 +82,10 @@ public class DependencyParser {
     }
 
     private ConcurrentMaltParserModel getModel()
-            throws MalformedURLException,
-                   MaltChainedException {
+            throws IOException,
+            MaltChainedException {
         if (model == null) {
-            URL maltModelURL = new File(this.modelFile).toURI().toURL();
+            URL maltModelURL = FileHandler.getPath(this.modelFile).toUri().toURL();
             this.model = ConcurrentMaltParserService.initializeParserModel(maltModelURL);
         }
         return model;
@@ -107,7 +106,7 @@ public class DependencyParser {
     }
 
     public ConcurrentDependencyGraph RawParse(List<TaggedWord> sentence)
-            throws MalformedURLException,
+            throws IOException,
             MaltChainedException {
         String[] conll = new String[sentence.size()];
         for (int i = 0; i < sentence.size(); i++) {
@@ -125,7 +124,7 @@ public class DependencyParser {
     }
 
     public ConcurrentDependencyGraph Parse(String[] conllSentence)
-            throws MalformedURLException,
+            throws IOException,
             MaltChainedException {
         return this.getModel().parse(conllSentence);
     }

@@ -5,7 +5,6 @@ import iust.ac.ir.nlp.jhazm.io.FileHandler;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 
 /**
@@ -35,7 +34,7 @@ public class Lemmatizer {
 
         WordTokenizer tokenizer = new WordTokenizer(verbsFile);
 
-        List<String> pureVerbs = Files.readAllLines(Paths.get(verbsFile), Charset.forName("UTF8"));
+        List<String> pureVerbs = Files.readAllLines(FileHandler.getPath(verbsFile), Charset.forName("UTF8"));
 
         this.verbs = new HashMap();
         this.verbs.put("است", "#است");

@@ -2,17 +2,17 @@ package iust.ac.ir.nlp.jhazm;
 
 import com.infomancers.collections.yield.Yielder;
 import edu.stanford.nlp.ling.TaggedWord;
+import iust.ac.ir.nlp.jhazm.io.FileHandler;
 
 import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 
 /**
- * interfaces Bijankhan Corpus (http://ece.ut.ac.ir/dbrg/bijankhan/Corpus/BijanKhan_Corpus_Processed.zip) that 
+ * interfaces Bijankhan Corpus (http://ece.ut.ac.ir/dbrg/bijankhan/Corpus/BijanKhan_Corpus_Processed.zip) that
  * you must download and extract it.
- * 
+ *
  * @author Mojtaba Khallash
  */
 public class BijankhanReader {
@@ -63,7 +63,7 @@ public class BijankhanReader {
         if (this.posMap != null)
         {
             HashMap mapper = new HashMap();
-            for (String line : Files.readAllLines(Paths.get(this.posMap), Charset.forName("UTF8")))
+            for (String line : Files.readAllLines(FileHandler.getPath(this.posMap), Charset.forName("UTF8")))
             {
                 String[] parts = line.split(",");
                 mapper.put(parts[0], parts[1]);
@@ -109,7 +109,7 @@ public class BijankhanReader {
 
         public YieldSentence() {
             try {
-                FileInputStream fstream = new FileInputStream(getBijankhanFile());
+                FileInputStream fstream = new FileInputStream(FileHandler.getPath(getBijankhanFile()).toFile());
                 DataInputStream in = new DataInputStream(fstream);
                 br = new BufferedReader(new InputStreamReader(in, Charset.forName("UTF8")));
             }

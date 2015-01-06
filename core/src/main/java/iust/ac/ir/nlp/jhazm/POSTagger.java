@@ -3,6 +3,7 @@ package iust.ac.ir.nlp.jhazm;
 import edu.stanford.nlp.ling.Sentence;
 import edu.stanford.nlp.ling.TaggedWord;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
+import iust.ac.ir.nlp.jhazm.io.FileHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,7 @@ public class POSTagger {
     }
 
     public POSTagger(String pathToModel) {
+        FileHandler.prepareFile(pathToModel);
         this.tagger = new MaxentTagger(pathToModel);
     }
 
