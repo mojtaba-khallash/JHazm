@@ -16,7 +16,13 @@ A Java version of [Hazm](https://github.com/sobhe/hazm) (Python library for dige
 
 To make a single jar file run this codes:
 
+```bash
 mvn clean compile assembly:single
+```
+For using this project as library in maven just use:
+```bash
+mvn clean install
+```
 
 To run and see the help:
 ```bash
