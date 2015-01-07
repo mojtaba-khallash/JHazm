@@ -26,7 +26,7 @@ public class LoggerUtil {
             //add file appender
             String filePath = System.getProperty("user.dir") + File.separator + "jhazm.log";
             RollingFileAppender appender = new RollingFileAppender(LOG_PATTERN, filePath);
-            appender.setName("Fast DP Log");
+            appender.setName("JHazm Log");
             appender.setMaxFileSize("1MB");
             appender.activateOptions();
             Logger.getRootLogger().addAppender(appender);
