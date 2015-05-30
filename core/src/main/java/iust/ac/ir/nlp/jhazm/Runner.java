@@ -1,9 +1,9 @@
 package iust.ac.ir.nlp.jhazm;
 
 import edu.stanford.nlp.ling.TaggedWord;
-import iust.ac.ir.nlp.jhazm.io.FileHandler;
-import iust.ac.ir.nlp.jhazm.utils.LoggerUtil;
-import iust.ac.ir.nlp.jhazm.utils.StringBuilderWriter;
+import ir.ac.iust.text.utils.FileHandler;
+import ir.ac.iust.text.utils.LoggerUtils;
+import ir.ac.iust.text.utils.StringBuilderWriter;
 import org.apache.commons.cli.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -19,7 +19,7 @@ import java.util.List;
  * Created by majid on 12/31/14.
  */
 public class Runner {
-    private static Logger logger = LoggerUtil.getLogger(Runner.class);
+    private static Logger logger = LoggerUtils.getLogger(Runner.class, "jhazm.log");
 
     public static void main(String[] args) throws IOException {
         // create the Options
