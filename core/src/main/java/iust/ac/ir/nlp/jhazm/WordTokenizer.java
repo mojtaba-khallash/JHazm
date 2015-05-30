@@ -1,12 +1,11 @@
 package iust.ac.ir.nlp.jhazm;
 
-import iust.ac.ir.nlp.jhazm.io.FileHandler;
+import ir.ac.iust.text.utils.FileHandler;
 import iust.ac.ir.nlp.jhazm.utility.RegexPattern;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 
 /**

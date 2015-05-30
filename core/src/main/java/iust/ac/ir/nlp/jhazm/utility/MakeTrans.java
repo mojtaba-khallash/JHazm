@@ -19,7 +19,7 @@ public class MakeTrans {
     public String Translate(String src) {
         StringBuilder sb = new StringBuilder(src.length());
         for (char src_c : src.toCharArray())
-            sb.append(d.containsKey(src_c) ? d.get(src_c) : src_c);
+            sb.append(d.containsKey(src_c) ? (Character) d.get(src_c) : src_c);
         return sb.toString();
     }
 }

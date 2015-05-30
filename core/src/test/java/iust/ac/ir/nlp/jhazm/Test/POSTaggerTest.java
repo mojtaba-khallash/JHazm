@@ -5,6 +5,7 @@ import edu.stanford.nlp.util.StringUtils;
 import iust.ac.ir.nlp.jhazm.POSTagger;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +19,7 @@ import static org.junit.Assert.assertEquals;
 public class POSTaggerTest {
     
     @Test
-    public void BatchTagTest() {
+    public void BatchTagTest() throws IOException {
         POSTagger tagger = new POSTagger();
 
         String[] input = new String[] { "من", "به", "مدرسه", "رفته بودم", "."};

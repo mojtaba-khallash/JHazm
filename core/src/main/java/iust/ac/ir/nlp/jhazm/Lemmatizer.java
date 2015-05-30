@@ -1,6 +1,6 @@
 package iust.ac.ir.nlp.jhazm;
 
-import iust.ac.ir.nlp.jhazm.io.FileHandler;
+import ir.ac.iust.text.utils.FileHandler;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

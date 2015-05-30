@@ -2,7 +2,7 @@ package iust.ac.ir.nlp.jhazm;
 
 import com.infomancers.collections.yield.Yielder;
 import edu.stanford.nlp.ling.TaggedWord;
-import iust.ac.ir.nlp.jhazm.io.FileHandler;
+import ir.ac.iust.text.utils.FileHandler;
 
 import java.io.*;
 import java.nio.charset.Charset;

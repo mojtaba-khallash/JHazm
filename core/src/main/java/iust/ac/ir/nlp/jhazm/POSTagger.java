@@ -3,8 +3,9 @@ package iust.ac.ir.nlp.jhazm;
 import edu.stanford.nlp.ling.Sentence;
 import edu.stanford.nlp.ling.TaggedWord;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
-import iust.ac.ir.nlp.jhazm.io.FileHandler;
+import ir.ac.iust.text.utils.FileHandler;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,13 +16,13 @@ import java.util.List;
 public class POSTagger {
     private MaxentTagger tagger;
 
-    public POSTagger() {
+    public POSTagger() throws IOException {
         this("resources/persian.tagger");
     }
 
-    public POSTagger(String pathToModel) {
+    public POSTagger(String pathToModel) throws IOException {
         FileHandler.prepareFile(pathToModel);
-        this.tagger = new MaxentTagger(pathToModel);
+        this.tagger = new MaxentTagger(FileHandler.getPath(pathToModel).toFile().getAbsolutePath());
     }
 
     public List<List<TaggedWord>> batchTags(List<List<String>> sentences) {

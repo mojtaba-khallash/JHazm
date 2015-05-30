@@ -2,7 +2,7 @@ package iust.ac.ir.nlp.jhazm;
 
 import com.infomancers.collections.yield.Yielder;
 import edu.stanford.nlp.ling.TaggedWord;
-import iust.ac.ir.nlp.jhazm.io.FileHandler;
+import ir.ac.iust.text.utils.FileHandler;
 import org.maltparser.concurrent.ConcurrentMaltParserModel;
 import org.maltparser.concurrent.ConcurrentMaltParserService;
 import org.maltparser.concurrent.graph.ConcurrentDependencyGraph;
@@ -71,7 +71,7 @@ public class DependencyParser {
         this.lemmatizer = lemmatizer;
     }
 
-    public POSTagger getTagger() {
+    public POSTagger getTagger() throws IOException {
         if (tagger == null)
             tagger = new POSTagger();
         return tagger;
