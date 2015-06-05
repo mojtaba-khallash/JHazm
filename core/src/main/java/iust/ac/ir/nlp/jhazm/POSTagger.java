@@ -14,6 +14,7 @@ import java.util.List;
  * @author Mojtaba Khallash
  */
 public class POSTagger {
+    public static POSTagger instance;
     private MaxentTagger tagger;
 
     public POSTagger() throws IOException {
@@ -23,6 +24,12 @@ public class POSTagger {
     public POSTagger(String pathToModel) throws IOException {
         FileHandler.prepareFile(pathToModel);
         this.tagger = new MaxentTagger(FileHandler.getPath(pathToModel).toFile().getAbsolutePath());
+    }
+
+    public static POSTagger i() throws IOException {
+        if (instance != null) return instance;
+        instance = new POSTagger();
+        return instance;
     }
 
     public List<List<TaggedWord>> batchTags(List<List<String>> sentences) {

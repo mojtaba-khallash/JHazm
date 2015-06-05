@@ -13,6 +13,7 @@ import java.util.*;
  * @author Mojtaba Khallash
  */
 public class WordTokenizer {
+    public static WordTokenizer instance;
     List<String> verbs;
     private boolean joinVerbParts = true;
     private HashSet<String> beforeVerbs;
@@ -26,10 +27,10 @@ public class WordTokenizer {
     public WordTokenizer(boolean joinVerbParts) throws IOException {
         this("data/verbs.dat", joinVerbParts);
     }
+
     public WordTokenizer(String verbsFile) throws IOException {
         this(verbsFile, true);
     }
-
     public WordTokenizer(String verbsFile, boolean joinVerbParts)
             throws IOException {
         this.joinVerbParts = joinVerbParts;
@@ -77,6 +78,12 @@ public class WordTokenizer {
                 this.verbs.set(i, verb.trim().split("#")[0] + "ه");
             }
         }
+    }
+
+    public static WordTokenizer i() throws IOException {
+        if (instance != null) return instance;
+        instance = new WordTokenizer();
+        return instance;
     }
 
     public HashSet<String> getBeforeVerbs() {

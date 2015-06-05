@@ -6,14 +6,20 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- *
  * @author Mojtaba Khallash
  */
 public class SentenceTokenizer {
+    public static SentenceTokenizer instance;
     private final RegexPattern pattern;
 
     public SentenceTokenizer() {
         this.pattern = new RegexPattern("([!\\.\\?⸮؟]+)[ \\n]+", "$1\n\n");
+    }
+
+    public static SentenceTokenizer i() {
+        if (instance != null) return instance;
+        instance = new SentenceTokenizer();
+        return instance;
     }
 
     public List<String> Tokenize(String text) {

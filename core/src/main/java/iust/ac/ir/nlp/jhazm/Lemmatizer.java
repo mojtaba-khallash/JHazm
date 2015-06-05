@@ -12,12 +12,14 @@ import java.util.*;
  * @author Mojtaba Khallash
  */
 public class Lemmatizer {
+    public static Lemmatizer instance;
     private HashMap verbs;
     private HashSet<String> words;
 
-    public Lemmatizer() throws IOException { 
+    public Lemmatizer() throws IOException {
         this("data/words.dat", "data/verbs.dat", true);
     }
+
     public Lemmatizer(boolean joinedVerbParts) throws IOException {
         this("data/words.dat", "data/verbs.dat", joinedVerbParts);
     }
@@ -54,6 +56,12 @@ public class Lemmatizer {
                 }
             }
         }
+    }
+
+    public static Lemmatizer i() throws IOException {
+        if (instance != null) return instance;
+        instance = new Lemmatizer();
+        return instance;
     }
 
     public String lemmatize(String word) {

@@ -17,6 +17,7 @@ import java.util.List;
  * @author Mojtaba Khallash
  */
 public class DependencyParser {
+    public static DependencyParser instance;
     public POSTagger tagger;
     private SentenceTokenizer sentenceTokenizer;
     private WordTokenizer wordTokenizer;
@@ -33,6 +34,12 @@ public class DependencyParser {
         this.tagger = tagger;
         this.lemmatizer = lemmatizer;
         this.modelFile = modelFile;
+    }
+
+    public static DependencyParser i() {
+        if (instance != null) return instance;
+        instance = new DependencyParser();
+        return instance;
     }
 
     public SentenceTokenizer getSentenceTokenizer() {

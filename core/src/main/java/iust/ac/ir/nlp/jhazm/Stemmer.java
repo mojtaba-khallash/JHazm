@@ -7,9 +7,16 @@ import org.apache.commons.lang3.StringUtils;
  * @author Mojtaba Khallash
  */
 public class Stemmer {
+    public static Stemmer instance;
     private final String[] ends = new String[] {
         "ات", "ان", "ترین", "تر", "م", "ت", "ش", "یی", "ی", "ها", "ٔ", "‌ا", //
     };
+
+    public static Stemmer i() {
+        if (instance != null) return instance;
+        instance = new Stemmer();
+        return instance;
+    }
 
     public String Stem(String word) {
         for (String end : this.ends) {

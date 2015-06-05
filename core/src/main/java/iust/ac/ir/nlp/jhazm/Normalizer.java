@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author Mojtaba Khallash
  */
 public class Normalizer {
+    public static Normalizer instance;
     private final String puncAfter = "!:\\.،؛؟»\\]\\)\\}";
     private final String puncBefore = "«\\[\\(\\{";
     private boolean characterRefinement = true;
@@ -68,6 +68,12 @@ public class Normalizer {
             // join ام, ات, اش, ای
             this.affixSpacingPatterns.add(new RegexPattern("([^ ]ه) (ا(م|ت|ش|ی))(?=[ \n" + puncAfter + "]|$)", "$1‌$2"));
         }
+    }
+
+    public static Normalizer i() {
+        if (instance != null) return instance;
+        instance = new Normalizer();
+        return instance;
     }
 
     public String Run(String text) {
