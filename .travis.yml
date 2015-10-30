@@ -4,6 +4,7 @@ sudo: false
 
 before_script:
   - cd JHazm
+  - cp -avr resources src/test/resources
 
 jdk:
   - oraclejdk8
