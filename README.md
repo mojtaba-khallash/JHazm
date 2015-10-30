@@ -1,6 +1,6 @@
 JHazm
 =====
-[![Build Status](https://travis-ci.org/mojtaba-khallash/JHazm.png)](https://travis-ci.org/mojtaba-khallash/JHazm)
+[![Build Status](https://travis-ci.org/mojtaba-khallash/JHazm.png)](https://travis-ci.org/mojtaba-khallash/JHazm) [![Dependency Status](https://www.versioneye.com/user/projects/563374b036d0ab0016001e4d/badge.svg?style=flat)](https://www.versioneye.com/user/projects/563374b036d0ab0016001e4d)
 
 A Java version of [Hazm](https://github.com/sobhe/hazm) (Python library for digesting Persian text)
 
