@@ -16,18 +16,17 @@
     <packaging>jar</packaging>
     <description>JHazm: A Java version of Hazm (https://github.com/sobhe/hazm)</description>
     <properties>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.12</junit.version>
         <collections.version>4.0</collections.version>
         <io.version>2.4</io.version>
-        <cli.version>1.2</cli.version>
-        <lang.version>3.3.2</lang.version>
+        <cli.version>1.3.1</cli.version>
+        <lang.version>3.4</lang.version>
         <hamcrest.version>1.3</hamcrest.version>
         <malt.version>1.8.1</malt.version>
-        <corenlp.version>3.5.0</corenlp.version>
+        <corenlp.version>3.5.2</corenlp.version>
         <liblinear.version>1.95</liblinear.version>
         <libsvm.version>3.17</libsvm.version>
         <log4j.version>2.1</log4j.version>
-        <yielder.version>2.1</yielder.version>
     </properties>
 
     <build>
@@ -36,7 +35,7 @@
             <plugin>
                 <groupId>com.googlecode.maven-java-formatter-plugin</groupId>
                 <artifactId>maven-java-formatter-plugin</artifactId>
-                <version>0.3.1</version>
+                <version>0.4</version>
                 <configuration>
                     <compilerSource>1.8</compilerSource>
                     <compilerCompliance>1.8</compilerCompliance>
@@ -88,7 +87,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
-                <version>2.8</version>
+                <version>2.10</version>
                 <configuration>
                     <downloadSources>true</downloadSources>
                     <downloadJavadocs>true</downloadJavadocs>
@@ -100,9 +99,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.7.2</version>
+                <version>2.19</version>
                 <configuration>
-                    <workingDirectory>src/test/resources</workingDirectory>
+                    <workingDirectory>resources</workingDirectory>
                 </configuration>
             </plugin>
         </plugins>
@@ -112,7 +111,7 @@
         <dependency>
             <groupId>org.antlr</groupId>
             <artifactId>antlr4-runtime</artifactId>
-            <version>4.5</version>
+            <version>4.5.1-1</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -170,11 +169,6 @@
             <groupId>tw.edu.ntu.csie</groupId>
             <artifactId>libsvm</artifactId>
             <version>${libsvm.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j.version}</version>
         </dependency>
     </dependencies>
 </project>
