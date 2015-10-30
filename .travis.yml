@@ -1,0 +1,9 @@
+language: java
+
+sudo: false
+
+before_script:
+  - cd JHazm
+
+jdk:
+  - oraclejdk8
