@@ -1,8 +1,8 @@
 to install local libs run:
-mvn clean
+> mvn clean
 
 and
-mvn package
+> mvn package
 
 to make a single all-in-one jar file execute:
-mvn assembly:single
+> mvn assembly:single
