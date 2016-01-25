@@ -23,7 +23,7 @@
         <lang.version>3.4</lang.version>
         <hamcrest.version>1.3</hamcrest.version>
         <malt.version>1.8.1</malt.version>
-        <corenlp.version>3.5.2</corenlp.version>
+        <corenlp.version>3.6.0</corenlp.version>
         <liblinear.version>1.95</liblinear.version>
         <libsvm.version>3.17</libsvm.version>
         <log4j.version>2.1</log4j.version>
