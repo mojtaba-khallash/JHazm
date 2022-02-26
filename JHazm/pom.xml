@@ -16,17 +16,17 @@
     <packaging>jar</packaging>
     <description>JHazm: A Java version of Hazm (https://github.com/sobhe/hazm)</description>
     <properties>
-        <junit.version>4.12</junit.version>
-        <collections.version>4.1</collections.version>
-        <io.version>2.5</io.version>
-        <cli.version>1.3.1</cli.version>
-        <lang.version>3.4</lang.version>
-        <hamcrest.version>1.3</hamcrest.version>
-        <malt.version>1.8.1</malt.version>
-        <corenlp.version>3.6.0</corenlp.version>
-        <liblinear.version>1.95</liblinear.version>
-        <libsvm.version>3.17</libsvm.version>
-        <log4j.version>2.1</log4j.version>
+        <junit.version>4.13.2</junit.version>
+        <collections.version>4.4</collections.version>
+        <io.version>2.11.0</io.version>
+        <cli.version>1.5.0</cli.version>
+        <lang.version>3.12.0</lang.version>
+        <hamcrest.version>2.2</hamcrest.version>
+        <malt.version>1.9.2</malt.version>
+        <corenlp.version>4.4.0</corenlp.version>
+        <liblinear.version>2.43</liblinear.version>
+        <libsvm.version>3.25</libsvm.version>
+        <slf4j.version>1.7.36</slf4j.version>
     </properties>
 
     <build>
@@ -181,6 +181,16 @@
             <groupId>tw.edu.ntu.csie</groupId>
             <artifactId>libsvm</artifactId>
             <version>${libsvm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,6 +1,6 @@
 package jhazm;
 
-import edu.stanford.nlp.ling.Sentence;
+import edu.stanford.nlp.ling.SentenceUtils;
 import edu.stanford.nlp.ling.TaggedWord;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 
@@ -44,7 +44,7 @@ public class POSTagger {
         String[] sen = new String[sentence.size()];
         for (int i = 0; i < sentence.size(); i++)
            sen[i] = sentence.get(i).replace(" ", "_");
-        List newSent = Sentence.toWordList(sen);
+        List newSent = SentenceUtils.toWordList(sen);
         List taggedSentence = this.tagger.tagSentence(newSent);
 
         List<TaggedWord> taggedSen = new ArrayList<>();
